@@ -1,0 +1,21 @@
+
+<h1>Book Information</h1>
+
+<h2>{{title}} </h2>
+<h3>{{price}} </h3>
+
+<ul>
+    <li *ngFor="let c of chapters"> {{c}} </li>
+</ul>    
+
+<p></p>
+
+<input type="text" #chapter placeholder="Chapter Title"/>
+<button (click)="addChapter(chapter.value)">Add Chapter</button>
+
+<p></p>
+
+<div *ngIf="ebookUrl != ''">
+     Click <a target="_blank"
+            href="{{ebookUrl}}">Here</a>  for Kindle Version.
+</div>     
