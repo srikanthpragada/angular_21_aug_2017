@@ -15,7 +15,7 @@ export class BookComponent  {
                            "Services"];
 
   addChapter(newchapter : string) : void {
-      console.log("Adding new chapter");
+      // console.log("Adding new chapter");
       this.chapters.push(newchapter);
   }
  

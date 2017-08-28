@@ -2,15 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { BookComponent } from './book.component';
+import { BindingComponent } from './binding.component';
 
 @NgModule({
   declarations: [
-    BookComponent
+    BookComponent, BindingComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [BookComponent]
+  bootstrap: [BindingComponent]
 })
 export class AppModule { }

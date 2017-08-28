@@ -1,0 +1,12 @@
+
+
+<div  [style.color]="color"
+      [class.isBold]="isBold"  
+      [class.isBig]="isBig">{{message}}</div>
+<p></p>
+<div  [ngClass]="myclasses">{{message}}</div>
+
+<p></p>
+<button (click)="toggleBold()">Toggle Bold</button>
+<button (click)="toggleBig()">Toggle Big</button>
+
