@@ -12,17 +12,20 @@ import { SecondComponent } from './multi/second.component';
 import { ParentComponent } from './multi/parent.component';
 import { ChildComponent } from './multi/child.component';
 
+import { UseLogComponent } from './services/uselog.component';
+
+
 
 @NgModule({
   declarations: [
     BookComponent, BindingComponent, PipesDemoComponent, BracketsPipe,
     FirstComponent,SecondComponent,
-    ParentComponent, ChildComponent
+    ParentComponent, ChildComponent, UseLogComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [ParentComponent]
+  providers: [ ],
+  bootstrap: [ UseLogComponent]
 })
 export class AppModule { }

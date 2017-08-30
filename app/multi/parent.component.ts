@@ -2,13 +2,20 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'st-parent',
-    template: 
-    ` <h1>Parent Component </h1>
-      <st-child></st-child>
-    `
+    templateUrl: './parent.component.html'
+    
 })
 export class ParentComponent implements OnInit {
+    messages : string[] = 
+    ["Quitter never win, winner never quit",
+     "Nothing works until you work",
+     "You see the world in the way you are"
+    ]
     constructor() { }
 
     ngOnInit() { }
+
+    showMessage(msg) {
+        console.log("Selected :" + msg);
+    }
 }
