@@ -1,0 +1,35 @@
+<h2>Login</h2>
+<style>
+    input.ng-invalid  {
+        color: red
+    }
+    form.ng-invalid {
+        background-color:gray;
+    }
+</style>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
+    <label for="uname">Username </label> <br>
+    <input type="text" #uname="ngModel" [(ngModel)]="username" 
+                  name="uname" minlength="4" pattern="[a-zA-z]+" required >
+    <span *ngIf="uname.dirty && uname.errors">
+           <span *ngIf="uname.errors.required">Username is required! </span>
+           <span *ngIf="uname.errors.minlength">
+                  Username must be at least {{ uname.errors.minlength.requiredLength}} chars
+           </span> 
+           <span *ngIf="uname.errors.pattern">
+                  Only letter are allowed!
+           </span> 
+           <p></p>
+           Errors object :  {{ uname.errors | json}}
+    </span>
+     <p></p>
+    <label for="pwd">Password </label> <br>
+    <input type="password" #pwd="ngModel" [(ngModel)]="password" 
+         name="pwd" required>
+    <span *ngIf="pwd.dirty && pwd.invalid">Password is required! </span> 
+    
+    <p></p>
+    <button [disabled]="!loginForm.valid">Login</button>
+    <p></p>
+    {{ loginForm.value | json }}
+</form>
