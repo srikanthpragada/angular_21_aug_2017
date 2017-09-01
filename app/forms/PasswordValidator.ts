@@ -7,9 +7,9 @@ export class PasswordValidator {
       return null;  // success
 
     if (formControl.value.indexOf('*') < 0)  // star not found
-      return { mustHaveStar: true };  // error 
+      return { mustHaveStar : { actualValue : formControl.value}};  // Error as validation failed  
  
-    return null;
+    return null;  // Success 
   }
 
   static checkMismatch(formGroup : FormGroup) {

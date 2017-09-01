@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 
 import { BookComponent } from './book.component';
 import { BindingComponent } from './binding.component';
@@ -16,6 +17,7 @@ import { ChildComponent } from './multi/child.component';
 
 import { UseLogComponent } from './services/uselog.component';
 import { LoginComponent } from './forms/login.component';
+import { ReactiveLoginComponent } from './forms/reactive-login.component';
 
 
 @NgModule({
@@ -23,12 +25,12 @@ import { LoginComponent } from './forms/login.component';
     BookComponent, BindingComponent, PipesDemoComponent, BracketsPipe,
     FirstComponent,SecondComponent,
     ParentComponent, ChildComponent, UseLogComponent,
-    LoginComponent
+    LoginComponent, ReactiveLoginComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, ReactiveFormsModule
   ],
   providers: [ ],
-  bootstrap: [ LoginComponent]
+  bootstrap: [ ReactiveLoginComponent]
 })
 export class AppModule { }
