@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 
+import { HttpModule } from '@angular/http';
+
 import { BookComponent } from './book.component';
 import { BindingComponent } from './binding.component';
 import { PipesDemoComponent } from './pipes/pipesdemo.component';
@@ -18,19 +20,20 @@ import { ChildComponent } from './multi/child.component';
 import { UseLogComponent } from './services/uselog.component';
 import { LoginComponent } from './forms/login.component';
 import { ReactiveLoginComponent } from './forms/reactive-login.component';
+import { BooksComponent } from './http/books.component';
+
+import { HttpGitComponent } from './http/httpgit.component';
+
 
 
 @NgModule({
   declarations: [
-    BookComponent, BindingComponent, PipesDemoComponent, BracketsPipe,
-    FirstComponent,SecondComponent,
-    ParentComponent, ChildComponent, UseLogComponent,
-    LoginComponent, ReactiveLoginComponent
+    BooksComponent, HttpGitComponent
   ],
   imports: [
-    BrowserModule, FormsModule, ReactiveFormsModule
+    BrowserModule, HttpModule
   ],
   providers: [ ],
-  bootstrap: [ ReactiveLoginComponent]
+  bootstrap: [ HttpGitComponent]
 })
 export class AppModule { }
