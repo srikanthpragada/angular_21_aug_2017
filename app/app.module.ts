@@ -6,34 +6,21 @@ import { ReactiveFormsModule} from '@angular/forms';
 
 import { HttpModule } from '@angular/http';
 
-import { BookComponent } from './book.component';
-import { BindingComponent } from './binding.component';
-import { PipesDemoComponent } from './pipes/pipesdemo.component';
-import { BracketsPipe } from './pipes/brackets.pipe';
-
-import { FirstComponent } from './multi/first.component';
-import { SecondComponent } from './multi/second.component';
-
-import { ParentComponent } from './multi/parent.component';
-import { ChildComponent } from './multi/child.component';
-
-import { UseLogComponent } from './services/uselog.component';
-import { LoginComponent } from './forms/login.component';
-import { ReactiveLoginComponent } from './forms/reactive-login.component';
-import { BooksComponent } from './http/books.component';
-
-import { HttpGitComponent } from './http/httpgit.component';
+import { Books2Component } from './http/books2.component';
+import { BooksService } from './services/books.service';
+import { Books3Component } from './http/books3.component';
+import { AddBookComponent } from './http/add-book.component';
 
 
 
 @NgModule({
   declarations: [
-    BooksComponent, HttpGitComponent
+     Books2Component, Books3Component, AddBookComponent
   ],
   imports: [
-    BrowserModule, HttpModule
+    BrowserModule, HttpModule, FormsModule
   ],
-  providers: [ ],
-  bootstrap: [ HttpGitComponent]
+  providers: [ BooksService  ],
+  bootstrap: [ AddBookComponent ]
 })
 export class AppModule { }
