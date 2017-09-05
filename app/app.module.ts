@@ -6,21 +6,32 @@ import { ReactiveFormsModule} from '@angular/forms';
 
 import { HttpModule } from '@angular/http';
 
-import { Books2Component } from './http/books2.component';
-import { BooksService } from './services/books.service';
-import { Books3Component } from './http/books3.component';
-import { AddBookComponent } from './http/add-book.component';
+import { RouterModule, Routes } from '@angular/router';
 
+import { AddComponent } from './routing/add.component';
+import { DetailsComponent } from './routing/details.component';
+import { ListComponent} from './routing/list.component';
+import { MainComponent } from './routing/main.component';
 
+const appRoutes : Routes = [
+  { path: 'list', component: ListComponent },
+  { path: 'add', component: AddComponent },
+  { path: 'details/:index', component: DetailsComponent },
+  { path: '',  component : ListComponent, pathMatch : 'full'},
+  { path: '**',  component : ListComponent}
+];
+
+ 
 
 @NgModule({
   declarations: [
-     Books2Component, Books3Component, AddBookComponent
+     ListComponent, MainComponent, AddComponent, DetailsComponent
   ],
   imports: [
     BrowserModule, HttpModule, FormsModule
+    ,RouterModule.forRoot(appRoutes)
   ],
-  providers: [ BooksService  ],
-  bootstrap: [ AddBookComponent ]
+  providers: [  ],
+  bootstrap: [ MainComponent ]
 })
 export class AppModule { }
